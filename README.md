@@ -10,7 +10,7 @@ backbone.
     |
     |-- Api-key.clixml
     |
-    |-- app.html
+    |-- index.html
     |
     |-- News-API.ps1
 
