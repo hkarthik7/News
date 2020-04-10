@@ -155,7 +155,7 @@ function Read-UKNews {
 $Params = @{
     ApiKey = (Import-Clixml .\Api-key.clixml).GetNetworkCredential().Password
     Url = 'http://newsapi.org/v2/top-headlines?country=gb'
-    ExportPath = ".\app.html"
+    ExportPath = ".\App\app.html"
     Verbose = $true
 }
 
