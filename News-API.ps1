@@ -1,4 +1,4 @@
-$ExportPath = ".\app.html"
+$ExportPath = ".\News\app.html"
 
 #region generate HTML static page
 $html = @"
