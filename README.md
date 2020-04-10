@@ -1,7 +1,7 @@
 #  NEWS APP WITH POWERSHELL
 
-This project s designed to show latest news in **UK** and displays in cards.
-The intention is to create this app as mobile friendly and holds PowerShell as it's
+This project is designed to show latest news in **UK** and displayed in cards.
+The intention is to create a mobile friendly app and holds PowerShell as it's
 backbone.
 
 ## BOILERPLATE
@@ -28,6 +28,4 @@ displayed.
 ## TODO
 
 - Layout change
-- Code redundancy
 - Multipage app
-- Responsive display features
