@@ -8,11 +8,11 @@ backbone.
 
     NEWS
     |
-    |-- Api-key.clixml
+    |-- Script/Api-key.clixml
     |
     |-- index.html
     |
-    |-- News-API.ps1
+    |-- Script/News-API.ps1
 
 ## DESIGN
 
