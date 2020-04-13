@@ -165,7 +165,7 @@ function Read-News {
 $UK = @{
     ApiKey = (Import-Clixml .\Api-key.clixml).GetNetworkCredential().Password
     Url = 'http://newsapi.org/v2/top-headlines?country=gb'
-    ExportPath = ".\News\index.html"
+    ExportPath = ".\index.html"
     Country = "UK"
     ReferenceName = "INDIA"
     ReferenceLink = "india.html"
@@ -175,7 +175,7 @@ $UK = @{
 $INDIA = @{
     ApiKey = (Import-Clixml .\Api-key.clixml).GetNetworkCredential().Password
     Url = 'http://newsapi.org/v2/top-headlines?country=in'
-    ExportPath = ".\News\india.html"
+    ExportPath = ".\india.html"
     Country = "INDIA"
     ReferenceName = "UK"
     ReferenceLink = "index.html"
