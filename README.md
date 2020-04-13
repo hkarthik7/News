@@ -22,7 +22,7 @@ in webpage. In order to get the app working
 
 - `News-API.ps1` has to be scheduled to run for every 1 hour so that latest news can be
 displayed.
-- `app.html` is the static HTML file that holds the news
+- `index.html` is the static HTML file that holds the news
 - `Api-key.clixml` this holds the news api key
 
 ## TODO
