@@ -1,6 +1,6 @@
 #  NEWS APP WITH POWERSHELL
 
-This project is designed to show latest news in **UK** and displayed in cards.
+This project is designed to show latest news in **UK** & **INDIA** and displayed in cards.
 The intention is to create a mobile friendly app and holds PowerShell as it's
 backbone.
 
@@ -12,6 +12,8 @@ backbone.
     |
     |-- index.html
     |
+    |-- india.html
+    |
     |-- Script/News-API.ps1
 
 ## DESIGN
@@ -22,7 +24,7 @@ in webpage. In order to get the app working
 
 - `News-API.ps1` has to be scheduled to run for every 1 hour so that latest news can be
 displayed.
-- `index.html` is the static HTML file that holds the news
+- `index.html`, `india.html` are the static HTML files that holds the news
 - `Api-key.clixml` this holds the news api key
 
 ## TODO
