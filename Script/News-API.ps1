@@ -33,7 +33,7 @@ class UrlResponse {
 
 }
 
-function Read-UKNews {
+function Read-News {
 
     [CmdletBinding()]
     param (
@@ -44,7 +44,16 @@ function Read-UKNews {
         [string]$Url,
 
         [Parameter(Mandatory=$true)]
-        [string]$ExportPath
+        [string]$ExportPath,
+
+        [Parameter(Mandatory=$true)]
+        [string]$Country,
+
+        [Parameter(Mandatory=$true)]
+        [string]$ReferenceName,
+
+        [Parameter(Mandatory=$true)]
+        [string]$ReferenceLink
     )
 
     begin {
@@ -61,7 +70,7 @@ function Read-UKNews {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title>UK NEWS</title>
+            <title>$($Country) NEWS</title>
             <link rel="icon" type="image/png" href="https://images.squarespace-cdn.com/content/v1/59d5623537c5817ce09196bf/1508964400127-ULPDNY4QJ0LER0CCNPTL/ke17ZwdGBToddI8pDm48kAg3YtiXGb9Y30HSwlFqSWBZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7dso8WS9HrXe-DDzLfr_qHkbriZg0Iu-s4mCjNkVmIrbmHWNG1OBCSefqzw2QRxcVQ/favicon.png">
 
             <!-- Bootstrap CSS -->
@@ -71,7 +80,8 @@ function Read-UKNews {
             <nav class="navbar text-white navbar-dark bg-dark">
                 <a class="navbar-brand">
                     <img src="https://images.squarespace-cdn.com/content/v1/59d5623537c5817ce09196bf/1508964400127-ULPDNY4QJ0LER0CCNPTL/ke17ZwdGBToddI8pDm48kAg3YtiXGb9Y30HSwlFqSWBZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7dso8WS9HrXe-DDzLfr_qHkbriZg0Iu-s4mCjNkVmIrbmHWNG1OBCSefqzw2QRxcVQ/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="News">
-                    <span style="padding: 10px">UK NEWS</span> 
+                    <span style="padding: 10px">$($Country) NEWS</span>
+                    <a class="nav-link" href="$($ReferenceLink)">$($ReferenceName)</a>
                 </a>
             </nav>
             <br>
@@ -152,13 +162,27 @@ function Read-UKNews {
 }
 
 # run function
-$Params = @{
+$UK = @{
     ApiKey = (Import-Clixml .\Api-key.clixml).GetNetworkCredential().Password
     Url = 'http://newsapi.org/v2/top-headlines?country=gb'
-    ExportPath = ".\index.html"
+    ExportPath = ".\News\index.html"
+    Country = "UK"
+    ReferenceName = "INDIA"
+    ReferenceLink = "india.html"
     Verbose = $true
 }
 
-Read-UKNews @Params
+$INDIA = @{
+    ApiKey = (Import-Clixml .\Api-key.clixml).GetNetworkCredential().Password
+    Url = 'http://newsapi.org/v2/top-headlines?country=in'
+    ExportPath = ".\News\india.html"
+    Country = "INDIA"
+    ReferenceName = "UK"
+    ReferenceLink = "index.html"
+    Verbose = $true
+}
 
-Invoke-Item $Params.ExportPath
+Read-News @UK
+Read-News @INDIA
+
+Invoke-Item $UK.ExportPath
