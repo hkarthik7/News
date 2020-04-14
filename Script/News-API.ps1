@@ -129,7 +129,7 @@ function Read-News {
                     $html += @"
                     <div class="col mb-4">
                         <div class="card" style="width: 18rem;">
-                            <img src="$($response.articles[$i].urlToImage)" class="card-img-top" style="object-fit: cover; width: 100%; height: 15vw; alt="image">
+                            <img src="$($response.articles[$i].urlToImage)" class="card-img-top" alt="image">
                             <div class="card-body">
                                 <a href="$($response.articles[$i].url)" class="card-link">$($response.articles[$i].title)</a>
                             </div>
