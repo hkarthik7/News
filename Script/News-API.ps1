@@ -11,7 +11,7 @@ Author: Harish Karthic
 Date: 10/04/2020
 Version: v1.4
 Comments: Intial Script for UK News App
-Comments: Modified the functionality of app by adding multipage and
+v1.4 : Modified the functionality of app by adding multipage and
 layout change.
 #>
 
