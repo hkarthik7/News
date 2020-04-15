@@ -1,16 +1,18 @@
 <#
 .SYNOPSIS
-This is designed to extract UK(GB) latest news from News API and create a mobile friendly app for displaying latest
+This is designed to extract news from News API and create a mobile friendly app for displaying latest
 UK news.
 
 .DESCRIPTION
-This script extracts latest UK News from News API and creates app only using PowerShell and HTML fragments.
+This script extracts News from News API and creates app only using PowerShell and HTML fragments.
 
 .NOTES
 Author: Harish Karthic
 Date: 10/04/2020
-Version: v1.0
+Version: v1.4
 Comments: Intial Script for UK News App
+Comments: Modified the functionality of app by adding multipage and
+layout change.
 #>
 
 class UrlResponse {
