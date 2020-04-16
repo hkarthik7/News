@@ -4,6 +4,8 @@ This project is designed to show latest news in **UK** & **INDIA** and displayed
 The intention is to create a mobile friendly app and holds PowerShell as it's
 backbone.
 
+Each news title is a link to the source news content from different sources.
+
 ## BOILERPLATE
 
     NEWS
