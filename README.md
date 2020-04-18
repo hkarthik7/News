@@ -29,6 +29,10 @@ displayed.
 - `index.html`, `india.html` are the static HTML files that holds the news
 - `Api-key.clixml` this holds the news api key
 
+## NOTES
+
+Added COVID-19 details and related url.
+
 ## TODO
 
 - Layout change
