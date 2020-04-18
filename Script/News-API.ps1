@@ -56,11 +56,6 @@ class UrlResponse {
         return Invoke-RestMethod -Uri $Url
     }
 
-    [PSCustomObject] GetResponse([string] $Url, [hashtable]$Headers) {
-
-        return Invoke-RestMethod -Uri $Url -Method Get -Headers $Headers
-    }
-
 }
 
 function Read-News {
