@@ -1,18 +1,36 @@
 <#
-.SYNOPSIS
-This is designed to extract news from News API and create a mobile friendly app for displaying latest
-UK news.
+    .SYNOPSIS
+    This is designed to extract news from News API and create a mobile friendly app for displaying latest
+    UK and other country news.
 
-.DESCRIPTION
-This script extracts News from News API and creates app only using PowerShell and HTML fragments.
+    .DESCRIPTION
+    This script extracts News from News API and creates app only using PowerShell and HTML fragments.
 
-.NOTES
-Author: Harish Karthic
-Date: 10/04/2020
-Version: v1.4
-Comments: Intial Script for UK News App
-v1.4 : Modified the functionality of app by adding multipage and
-layout change.
+    .PARAMETER ApiKey
+    Provide the API key of News API. 
+
+    NOTE: if API key is not available web scrapping can be done and the class UrlResponse returns the 
+    response data of passed in url.
+
+    .PARAMETER Url
+    Provide the Url to retrieve response.
+
+    .PARAMETER FilePath
+    Provide the path of file to save the results.
+
+    .EXAMPLE
+    $response = [UrlResponse]::new()
+    $response.GetResponse("https://www.google.com")
+
+    .NOTES
+    Author             Version		 Date			Notes
+    ----------------------------------------------------------------------
+    harish.karthic     1.0	        10/04/2020		Initial script
+    harish.karthic     1.1	        11/04/2020		Read-News Advanced function to retrieve news from News API
+    harish.karthic     1.2	        14/04/2020		Modified HTML code
+    harish.karthic     1.3	        15/04/2020		Minor bug fix
+    harish.karthic     1.4	        15/04/2020		Added multipage layout with additional news from another country
+    harish.karthic     1.4	        18/04/2020		Added comment based help
 #>
 
 class UrlResponse {
@@ -25,12 +43,22 @@ class UrlResponse {
         return ("{0}|{1}|{2}" -f $this.ApiKey, $this.FilePath, $this.Uri)
     }
 
-    [PSCustomObject] GetRespose([string] $Url, [string] $UrlApiKey) {
+    [PSCustomObject] GetResponse([string] $Url, [string] $UrlApiKey) {
         $headers = @{
             Authorization = $UrlApiKey
         }
 
         return Invoke-RestMethod -Uri $Url -Headers $headers
+    }
+
+    [PSCustomObject] GetResponse([string] $Url) {
+
+        return Invoke-RestMethod -Uri $Url
+    }
+
+    [PSCustomObject] GetResponse([string] $Url, [hashtable]$Headers) {
+
+        return Invoke-RestMethod -Uri $Url -Method Get -Headers $Headers
     }
 
 }
@@ -108,7 +136,7 @@ function Read-News {
 
             # instantiate class
             $news = [UrlResponse]::new()
-            $response = $news.GetRespose($Url, $ApiKey)
+            $response = $news.GetResponse($Url, $ApiKey)
 
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Creating App contents and building News App.."
 
@@ -172,7 +200,7 @@ function Read-News {
 
 # run function
 $UK = @{
-    ApiKey = (Import-Clixml .\Api-key.clixml).GetNetworkCredential().Password
+    ApiKey = (Import-Clixml .\Key.clixml).GetNetworkCredential().Password
     Url = 'http://newsapi.org/v2/top-headlines?country=gb'
     ExportPath = ".\index.html"
     Country = "UK"
@@ -182,7 +210,7 @@ $UK = @{
 }
 
 $INDIA = @{
-    ApiKey = (Import-Clixml .\Api-key.clixml).GetNetworkCredential().Password
+    ApiKey = (Import-Clixml .\Key.clixml).GetNetworkCredential().Password
     Url = 'http://newsapi.org/v2/top-headlines?country=in'
     ExportPath = ".\india.html"
     Country = "INDIA"
