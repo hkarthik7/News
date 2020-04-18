@@ -30,7 +30,7 @@
     harish.karthic     1.2	        14/04/2020		Modified HTML code
     harish.karthic     1.3	        15/04/2020		Minor bug fix
     harish.karthic     1.4	        15/04/2020		Added multipage layout with additional news from another country
-    harish.karthic     1.4	        18/04/2020		Added comment based help
+    harish.karthic     1.5	        18/04/2020		Added comment based help
 #>
 
 class UrlResponse {
