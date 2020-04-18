@@ -368,7 +368,8 @@ function Get-CovidData {
 
             $uk = Get-Content -Path "$FilePath\covid-uk.json" -Raw | ConvertFrom-Json
 
-            $counter = ((Get-Date) - (Get-Date -Date "01/31/2020")).Days
+            # $counter = ((Get-Date) - (Get-Date -Date "01/31/2020")).Days
+            $counter = 11
 
             for ($i = 1; $i -le $counter; $i++) {
 
