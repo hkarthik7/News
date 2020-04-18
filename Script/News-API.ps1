@@ -338,9 +338,9 @@ function Get-CovidData {
                     <li>Only go outside for food, health reasons or work (but only if you cannot work from home)</li>
                     <li>If you go out, stay 2 metres (6ft) away from other people at all times</li>
                     <li>Wash your hands as soon as you get home</li>
-                    Do not meet others, even friends or family.
-                    You can spread the virus even if you don’t have symptoms.
                 </p>
+                    <p>Do not meet others, even friends or family.</p>
+                    <p>You can spread the virus even if you don't have symptoms.</p>
                 <hr class="my-4">
                 <a class="btn btn-primary btn-sm" href="$($responsesCovid.source.url)" role="button">Learn more</a>
             </div>
