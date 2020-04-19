@@ -98,7 +98,7 @@ function Read-News {
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Begin Function.."
         "[$(Get-Date -Format s)] : $($functionName) : Begin Function.." | Out-File $LogFile -Append
 
-        Write-Verbose "[$(Get-Date -Format s)] : $($functionName) :  Building HTML.."
+        Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Building HTML.."
         "[$(Get-Date -Format s)] : $($functionName) :  Building HTML.." | Out-File $LogFile -Append
 
         #region generate HTML static page
@@ -241,7 +241,7 @@ function Get-CovidData {
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Begin Function.."
         "[$(Get-Date -Format s)] : $($functionName) : Begin Function.." | Out-File $LogFile -Append
 
-        Write-Verbose "[$(Get-Date -Format s)] : $($functionName) :  Building HTML.."
+        Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Building HTML.."
         "[$(Get-Date -Format s)] : $($functionName) :  Building HTML.." | Out-File $LogFile -Append
 
         #region generate HTML static page
