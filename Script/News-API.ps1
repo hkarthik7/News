@@ -32,6 +32,8 @@
     harish.karthic     1.4	        15/04/2020		Added multipage layout with additional news from another country
     harish.karthic     1.5	        18/04/2020		Added comment based help
     harish.karthic     2.0	        18/04/2020		Added Covid-19 data, link and function
+    harish.karthic     2.1	        19/04/2020		Added logging functionality
+
 #>
 
 class UrlResponse {
@@ -83,15 +85,21 @@ function Read-News {
         [string]$ReferenceName,
 
         [Parameter(Mandatory=$true)]
-        [string]$ReferenceLink
+        [string]$ReferenceLink,
+
+        [Parameter(Mandatory=$true)]
+        [string]$LogPath
     )
 
     begin {
         $functionName = $MyInvocation.MyCommand.Name
+        $LogFile = $LogPath + "\Read-News_$(Get-Date -Format ddMMyyyy).log"
 
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Begin Function.."
+        "[$(Get-Date -Format s)] : $($functionName) : Begin Function.." | Out-File $LogFile -Append
 
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) :  Building HTML.."
+        "[$(Get-Date -Format s)] : $($functionName) :  Building HTML.." | Out-File $LogFile -Append
 
         #region generate HTML static page
         $html = @"
@@ -134,12 +142,14 @@ function Read-News {
     process {
         try {
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Getting News from News API.."
+            "[$(Get-Date -Format s)] : $($functionName) : Getting News from News API.." | Out-File $LogFile -Append
 
             # instantiate class
             $news = [UrlResponse]::new()
             $response = $news.GetResponse($Url, $ApiKey)
 
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Creating App contents and building News App.."
+            "[$(Get-Date -Format s)] : $($functionName) : Creating App contents and building News App.."  | Out-File $LogFile -Append
 
             $counter = if(($response.articles.Count % 3) -eq 0) { $response.articles.Count } else {
                 for ($i = 0; $i -lt $response.articles.Count; $i++) {
@@ -186,16 +196,20 @@ function Read-News {
 "@
 
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Exporting results.."
+            "[$(Get-Date -Format s)] : $($functionName) : Exporting results.." | Out-File $LogFile -Append
+
             $html | Out-File $ExportPath
 
         }
         catch {
             Write-Host "[$(Get-Date -Format s)] $functionName : Error at line $($_.InvocationInfo.ScriptLineNumber): $($_.Exception.Message)" -ForegroundColor Red
+            "[$(Get-Date -Format s)] $functionName : Error at line $($_.InvocationInfo.ScriptLineNumber): $($_.Exception.Message)" | Out-File $LogFile -Append
         }
     }
 
     end {
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : End Function.."
+        "[$(Get-Date -Format s)] : $($functionName) : End Function.." | Out-File $LogFile -Append 
     } 
 }
 
@@ -214,15 +228,21 @@ function Get-CovidData {
         [string]$CountryUrl,
 
         [Parameter(Mandatory=$true)]
-        [string]$FilePath
+        [string]$FilePath,
+
+        [Parameter(Mandatory=$true)]
+        [string]$LogPath
     )
 
     begin {
         $functionName = $MyInvocation.MyCommand.Name
+        $LogFile = $LogPath + "\Covid19_$(Get-Date -Format ddMMyyyy).log"
 
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Begin Function.."
+        "[$(Get-Date -Format s)] : $($functionName) : Begin Function.." | Out-File $LogFile -Append
 
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) :  Building HTML.."
+        "[$(Get-Date -Format s)] : $($functionName) :  Building HTML.." | Out-File $LogFile -Append
 
         #region generate HTML static page
         $html = @"
@@ -270,6 +290,7 @@ function Get-CovidData {
     process {
         try {
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Getting COVID-19 details.."
+            "[$(Get-Date -Format s)] : $($functionName) : Getting COVID-19 details.." | Out-File $LogFile -Append
 
             # instantiate class
             $covid = [UrlResponse]::new()
@@ -280,6 +301,7 @@ function Get-CovidData {
             $responsesCovid = Get-Content "$FilePath\covid-results.json" -Raw | ConvertFrom-Json
 
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Creating App contents and building Covid App page.."
+            "[$(Get-Date -Format s)] : $($functionName) : Creating App contents and building Covid App page.." | Out-File $LogFile -Append
 
             $html += @"
             <div class="col mb-4">
@@ -401,16 +423,19 @@ function Get-CovidData {
 "@
 
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Exporting results.."
+            "[$(Get-Date -Format s)] : $($functionName) : Exporting results.." | Out-File $LogFile -Append
 
             $html | Out-File "$FilePath\covid-19.html"
         }
         catch {
             Write-Host "[$(Get-Date -Format s)] $functionName : Error at line $($_.InvocationInfo.ScriptLineNumber): $($_.Exception.Message)" -ForegroundColor Red
+            "[$(Get-Date -Format s)] $functionName : Error at line $($_.InvocationInfo.ScriptLineNumber): $($_.Exception.Message)" | Out-File $LogFile -Append
         }
     }
 
     end {
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : End Function.."
+        "[$(Get-Date -Format s)] : $($functionName) : End Function.." | Out-File $LogFile -Append
     } 
 
     
@@ -424,6 +449,7 @@ $UK = @{
     Country = "UK"
     ReferenceName = "INDIA"
     ReferenceLink = "india.html"
+    LogPath = ".\Logs"
     Verbose = $true
 }
 
@@ -434,6 +460,7 @@ $INDIA = @{
     Country = "INDIA"
     ReferenceName = "UK"
     ReferenceLink = "index.html"
+    LogPath = ".\Logs"
     Verbose = $true
 }
 
@@ -441,6 +468,7 @@ $CovidData = @{
     Url = "https://thevirustracker.com/free-api?global=stats"
     CountryUrl = "https://thevirustracker.com/free-api?countryTimeline=GB"
     FilePath = ".\"
+    LogPath = ".\Logs"
     Verbose = $true
 }
 
