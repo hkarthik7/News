@@ -42,7 +42,7 @@ $INDIA = @{
 $CovidData = @{
     Url = "https://thevirustracker.com/free-api?global=stats"
     CountryUrl = "https://thevirustracker.com/free-api?countryTimeline=GB"
-    FilePath = ".\"
+    FilePath = ".\Reports"
     LogPath = ".\Logs"
     Verbose = $true
 }
