@@ -206,4 +206,4 @@ function Read-News {
         "[$(Get-Date -Format s)] : $($functionName) : End Function.." | Out-File $LogFile -Append 
     } 
 }
-#EOF
+Export-ModuleMember -Function Read-News

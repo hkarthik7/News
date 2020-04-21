@@ -44,4 +44,4 @@ Function Get-Response {
     }
     return $response
 }
-#EOF
+Export-ModuleMember -Function Get-Response

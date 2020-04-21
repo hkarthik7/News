@@ -251,4 +251,4 @@ function Get-CovidData {
 
     
 }
-#EOF
+Export-ModuleMember -Function Get-CovidData
