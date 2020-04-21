@@ -104,8 +104,7 @@ function Get-CovidData {
             "[$(Get-Date -Format s)] : $($functionName) : Getting COVID-19 details.." | Out-File $LogFile -Append
 
             # instantiate class
-            $covid = [UrlResponse]::new()
-            $covidResponse = $covid.GetResponse($Url)
+            $covidResponse = Get-Response -Uri $Url
 
             $covidResponse.results | ConvertTo-Json | Out-File -FilePath "$FilePath\covid-results.json"
 

@@ -1,5 +1,5 @@
 @{
-    RootModule = 'Module.psm1'
+    RootModule = '.\Module.psm1'
     ModuleVersion = '1.0'
     GUID = '3526ff6f-8ca5-4529-a2c7-67b627a81836'
     Author = 'Harish Karthic'
