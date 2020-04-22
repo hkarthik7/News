@@ -35,13 +35,12 @@ Function Get-Response {
         [string] $Uri,
 
         [Parameter(Mandatory=$true)]
-        [string] $LogPath
+        [string] $LogFile
     )
 
     begin {
         # initialise function variable
         $functionName = $MyInvocation.MyCommand.Name
-        $LogFile = $LogPath + "\Response_$(Get-Date -Format ddMMyyyy).log"
 
         Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Begin Function.."
         "[$(Get-Date -Format s)] : $($functionName) : Begin Function.." | Out-File $LogFile -Append

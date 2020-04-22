@@ -140,7 +140,7 @@ function Read-News {
             "[$(Get-Date -Format s)] : $($functionName) : Getting News from News API.." | Out-File $LogFile -Append
 
             # Get url response
-            $response = Get-Response -ApiKey $ApiKey -Uri $Url
+            $response = Get-Response -ApiKey $ApiKey -Uri $Url -LogFile $LogFile -Verbose
 
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Creating App contents and building News App.."
             "[$(Get-Date -Format s)] : $($functionName) : Creating App contents and building News App.."  | Out-File $LogFile -Append

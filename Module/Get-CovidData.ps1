@@ -42,6 +42,9 @@ function Get-CovidData {
         [string]$FilePath,
 
         [Parameter(Mandatory=$true)]
+        [string]$ExportPath,
+
+        [Parameter(Mandatory=$true)]
         [string]$LogPath
     )
 
@@ -104,7 +107,7 @@ function Get-CovidData {
             "[$(Get-Date -Format s)] : $($functionName) : Getting COVID-19 details.." | Out-File $LogFile -Append
 
             # instantiate class
-            $covidResponse = Get-Response -Uri $Url
+            $covidResponse = Get-Response -Uri $Url -LogFile $LogFile -Verbose
 
             $covidResponse.results | ConvertTo-Json | Out-File -FilePath "$FilePath\covid-results.json"
 
@@ -194,7 +197,7 @@ function Get-CovidData {
 "@
 
             # Create COVID-19 UK TABLE
-            $covidUK = $covid.GetResponse($CountryUrl)
+            $covidUK = Get-Response -Uri $Url -LogFile $LogFile -Verbose
 
             $covidUK.timelineitems | ConvertTo-Json -Depth 100 | Out-File "$FilePath\covid-uk.json"
 
@@ -235,7 +238,7 @@ function Get-CovidData {
             Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Exporting results.."
             "[$(Get-Date -Format s)] : $($functionName) : Exporting results.." | Out-File $LogFile -Append
 
-            $html | Out-File "$FilePath\covid-19.html"
+            $html | Out-File "$ExportPath\covid-19.html"
         }
         catch {
             Write-Host "[$(Get-Date -Format s)] $functionName : Error at line $($_.InvocationInfo.ScriptLineNumber): $($_.Exception.Message)" -ForegroundColor Red
