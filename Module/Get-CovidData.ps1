@@ -197,7 +197,7 @@ function Get-CovidData {
 "@
 
             # Create COVID-19 UK TABLE
-            $covidUK = Get-Response -Uri $Url -LogFile $LogFile -Verbose
+            $covidUK = Get-Response -Uri $CountryUrl -LogFile $LogFile -Verbose
 
             $covidUK.timelineitems | ConvertTo-Json -Depth 100 | Out-File "$FilePath\covid-uk.json"
 
