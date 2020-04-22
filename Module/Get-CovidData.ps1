@@ -84,7 +84,7 @@ function Get-CovidData {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link" href="index.html">UK</a>
+                            <a class="nav-link" href="uk.html">UK</a>
                             <a class="nav-link" href="india.html">INDIA</a>
                         </div>
                     </div>
