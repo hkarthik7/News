@@ -1,8 +1,8 @@
 #  NEWS APP WITH POWERSHELL
 
-**News app** is a collection of news updates from various news sources and shows in small chunk sections. Each news is linked to its corresponding sources, this helps to read the news in short and at the same time detailed news can be read by a simple click on the headline. Currently latest news in **UK** & **INDIA** and available along with **COVID-19** **UK** data.
+**News app** is a collection of latest news updates from various sources and shows in small chunks. Each news is linked to its corresponding sources, this helps to read the news in short and at the same time detailed news can be read by a simple click on the headline. Currently, latest news in **UK** & **INDIA** and available along with **COVID-19** **UK** data.
 
-Since the app is distributed in a url it comes as mobile friendly.
+Adding to this **News app** is `mobile friendly`.
 
 ## WHAT MAKES NEWS APP DIFFERENT
 
@@ -30,7 +30,7 @@ Since the app is distributed in a url it comes as mobile friendly.
 
 ## DESIGN
 
-`NEWS APP` is designed with powershell which makes it more unique and consists of 3 main files which works in `MVC` model. The information is fetched from NEW API using PowerShell which is then manipulated and modified to view in webpage. In order to get the app working
+`NEWS APP` is designed with *powershell* and *html* and contains 3 main files which works in `MVC` model. The information is fetched from NEW API and modified to view in webpage. In order to get the app working
 
 - `app.ps1` has to be scheduled to run for every 1 hour so that latest news can be displayed.
 - `index.html`, `india.html`, `covid-19` are the static HTML files that holds the news and covid-19 data
