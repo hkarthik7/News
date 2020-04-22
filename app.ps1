@@ -15,7 +15,7 @@ Import-Module .\Module
 $UK = @{
     ApiKey = (Import-Clixml .\Key.clixml).GetNetworkCredential().Password
     Url = 'http://newsapi.org/v2/top-headlines?country=gb'
-    ExportPath = ".\index.html"
+    ExportPath = ".\uk.html"
     Country = "UK"
     ReferenceName = "INDIA"
     ReferenceLink = "india.html"
@@ -29,7 +29,7 @@ $INDIA = @{
     ExportPath = ".\india.html"
     Country = "INDIA"
     ReferenceName = "UK"
-    ReferenceLink = "index.html"
+    ReferenceLink = "uk.html"
     LogPath = ".\Logs"
     Verbose = $true
 }
