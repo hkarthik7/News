@@ -27,6 +27,8 @@ function Get-CovidData {
     Author             Version		 Date			Notes
     ----------------------------------------------------------------------
     harish.karthic     1.0	        17/04/2020		Initial script
+    harish.karthic     1.0	        21/04/2020		Added into module
+    harish.karthic     1.0	        22/04/2020		Minor bug fix
 
 #>
 
