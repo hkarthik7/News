@@ -38,6 +38,7 @@ $CovidData = @{
     Url = "https://thevirustracker.com/free-api?global=stats"
     CountryUrl = "https://thevirustracker.com/free-api?countryTimeline=GB"
     FilePath = ".\Reports"
+    ExportPath = ".\"
     LogPath = ".\Logs"
     Verbose = $true
 }
