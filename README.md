@@ -10,13 +10,21 @@ Each news title is a link to the source news content from different sources.
 
     NEWS
     |
-    |-- Script/Api-key.clixml
+    |-- Logs # folder to track the logs information
     |
-    |-- index.html
+    |-- Module # main module
+    |
+    |-- Reports # contains covid-19 reports
+    |
+    |-- Api-Key.clixml # Api key (if applicable)
+    |
+    |-- app.ps1 # script which runs the app
+    |
+    |-- uk.html
     |
     |-- india.html
     |
-    |-- Script/News-API.ps1
+    |-- covid-19.html
 
 ## DESIGN
 
@@ -24,10 +32,10 @@ The `NEWS APP` consists of 3 main files which works in `MVC` model. The informat
 fetched from NEW API using PowerShell which is then manipulated and modified to view
 in webpage. In order to get the app working
 
-- `News-API.ps1` has to be scheduled to run for every 1 hour so that latest news can be
+- `app.ps1` has to be scheduled to run for every 1 hour so that latest news can be
 displayed.
-- `index.html`, `india.html` are the static HTML files that holds the news
-- `Api-key.clixml` this holds the news api key
+- `uk.html`, `india.html`, `covid-19` are the static HTML files that holds the news and covid-19 data
+- `Api-key.clixml` this holds the news api key applicable if any
 
 ## NOTES
 
