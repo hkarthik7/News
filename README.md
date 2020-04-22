@@ -1,12 +1,14 @@
 #  NEWS APP WITH POWERSHELL
 
-This project is designed to show latest news in **UK** & **INDIA** and displayed in cards.
-The intention is to create a mobile friendly app and holds PowerShell as it's
-backbone.
+**News app** is a collection of news updates from various news sources and shows in small chunk sections. Each news is linked to its corresponding sources, this helps to read the news in short and at the same time the detailed news can be read by a simple click on the headlines. Currently latest news in **UK** & **INDIA** and available along with **COVID-19** **UK** data.
 
-Each news title is a link to the source news content from different sources.
+Since the app is distributed in a url it comes as mobile friendly.
 
-## BOILERPLATE
+## WHAT MAKES NEWS APP DIFFERENT
+
+**News app** holds a simple & clean layout and shows what is necessary in small chunks which makes it unique.
+
+## APP BOILERPLATE
 
     NEWS
     |
@@ -28,7 +30,7 @@ Each news title is a link to the source news content from different sources.
 
 ## DESIGN
 
-The `NEWS APP` consists of 3 main files which works in `MVC` model. The information is
+`NEWS APP` consists of 3 main files which works in `MVC` model. The information is
 fetched from NEW API using PowerShell which is then manipulated and modified to view
 in webpage. In order to get the app working
 
