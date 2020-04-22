@@ -30,13 +30,10 @@ Since the app is distributed in a url it comes as mobile friendly.
 
 ## DESIGN
 
-`NEWS APP` consists of 3 main files which works in `MVC` model. The information is
-fetched from NEW API using PowerShell which is then manipulated and modified to view
-in webpage. In order to get the app working
+`NEWS APP` is designed with powershell which makes it more unique and consists of 3 main files which works in `MVC` model. The information is fetched from NEW API using PowerShell which is then manipulated and modified to view in webpage. In order to get the app working
 
-- `app.ps1` has to be scheduled to run for every 1 hour so that latest news can be
-displayed.
-- `uk.html`, `india.html`, `covid-19` are the static HTML files that holds the news and covid-19 data
+- `app.ps1` has to be scheduled to run for every 1 hour so that latest news can be displayed.
+- `index.html`, `india.html`, `covid-19` are the static HTML files that holds the news and covid-19 data
 - `Api-key.clixml` this holds the news api key applicable if any
 
 ## NOTES
