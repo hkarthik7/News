@@ -1,0 +1,34 @@
+{
+    "name": "News App settings",
+    "version": "1.0",
+    "author": "Harish Karthic",
+    "description": "Settings file for News App which helps to pass all mandatory settings to run the app",
+    "parameters": {
+        "apiKey": "Key.clixml",
+        "countries": {
+            "uk": {
+                "name": "UK",
+                "url": "http://newsapi.org/v2/top-headlines?country=gb",
+                "fileName": "index.html",
+                "referenceName": "INDIA",
+                "referenceLink": "india.html"
+            },
+            "india": {
+                "name": "INDIA",
+                "url": "http://newsapi.org/v2/top-headlines?country=in",
+                "fileName": "india.html",
+                "referenceName": "UK",
+                "referenceLink": "index.html"
+            }
+        },
+        "covid19": {
+            "url": "https://thevirustracker.com/free-api?global=stats",
+            "countryUrl": "https://thevirustracker.com/free-api?countryTimeline=GB",
+            "filePath": "Reports"
+        },
+        "reportPaths": {
+            "logPath": "Logs",
+            "exportPath": ".\\"
+        }
+    }
+}
