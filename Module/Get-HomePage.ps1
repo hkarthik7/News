@@ -2,31 +2,59 @@ function Get-HomePage {
 
     <#
     .SYNOPSIS
-    This script gets the Covid19 data from thevirustracker.com.
+    This script is to display the home page of The Daily News.
 
     .DESCRIPTION
-    This script gets the Covid19 data from thevirustracker.com and only UK report is
-    currently provisioned and displayed.
+    This script is to display the home page of The Daily News with countries listed.
 
-    .PARAMETER CountryUrl
-    Provide the url of country to get the covid reports from.
+    .PARAMETER Url
+    Provide the url of country to get the news.
 
-    .PARAMETER Uri
-    Provide the Url to retrieve response.
+    .PARAMETER ApiKey
+    Provide the ApiKey to retrieve response.
+
+    .PARAMETER Name
+    Provide the reference name. In this case it is Home.
+
+    .PARAMETER FileName
+    Provide the reference file name. In this cas it is index.html.
+
+    .PARAMETER CountryCodes
+    Provide the country codes.
+
+    .PARAMETER CountryNames
+    Provide the country names.
 
     .PARAMETER FilePath
+    Provide the path of all possible countries html page.
+
+    .PARAMETER ExportPath
     Provide the path to save report.
 
     .PARAMETER LogPath
     Provide the path to save log files.
 
     .EXAMPLE
-    Get-Response -Uri "https://www.google.com"
+    $homePage = @{
+        ApiKey = "ApiKey"
+        Url = "url"
+        Name = "Home"
+        FileName = "index.html"
+        CountryCodes = "gb", "in"
+        CountryNames = "Unitd Kingdom", "India"
+        FilePath = "C:\Path\To\File"
+        ExportPath = "C:\Path\To\Save\File"
+        LogPath = "C:\Path\To\Save\Log\File"
+        Verbose = $true
+    }
+
+    Get-HomePage @homePage
 
     .NOTES
     Author             Version		 Date			Notes
     ----------------------------------------------------------------------
     harish.karthic     1.0	        26/04/2020		Initial script
+    harish.karthic     1.1	        26/04/2020		Change in title
 
 #>
     
@@ -78,7 +106,7 @@ function Get-HomePage {
                 <!-- Bootstrap meta tag -->
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                <title>NEWS</title>
+                <title>THE DAILY NEWS</title>
                 <link rel="icon" type="image/png" href="https://images.squarespace-cdn.com/content/v1/59d5623537c5817ce09196bf/1508964400127-ULPDNY4QJ0LER0CCNPTL/ke17ZwdGBToddI8pDm48kAg3YtiXGb9Y30HSwlFqSWBZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7dso8WS9HrXe-DDzLfr_qHkbriZg0Iu-s4mCjNkVmIrbmHWNG1OBCSefqzw2QRxcVQ/favicon.png">
 
                 <!-- Bootstrap CSS -->
