@@ -1,6 +1,6 @@
 #  NEWS APP WITH POWERSHELL
 
-**News app** is a collection of latest news updates from various sources and shown in small chunks. Each news is linked to its corresponding sources, this helps to read the news in short and at the same time the detailed news can be read by a simple click on the headlines.Currently, latest news from few countries such as **UK**, **INDIA**, **US** are available along with **COVID-19** **UK** data.
+**News app** is a collection of latest news updates from various sources and shown in small chunks. Each news is linked to its corresponding sources, this helps to read the news in short and at the same time the detailed news can be read by a simple click on the headlines. Currently, latest news from few countries such as **UK**, **INDIA**, **US** are available along with **COVID-19** **UK** data.
 
 Adding to this, **News app** is `mobile friendly`.
 
