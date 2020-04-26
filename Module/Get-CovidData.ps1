@@ -27,8 +27,10 @@ function Get-CovidData {
     Author             Version		 Date			Notes
     ----------------------------------------------------------------------
     harish.karthic     1.0	        17/04/2020		Initial script
-    harish.karthic     1.0	        21/04/2020		Added into module
-    harish.karthic     1.0	        22/04/2020		Minor bug fix
+    harish.karthic     1.1	        21/04/2020		Added into module
+    harish.karthic     1.2	        22/04/2020		Minor bug fix
+    harish.karthic     1.3	        26/04/2020		Parameterised reference name and link values
+
 
 #>
 
@@ -42,6 +44,12 @@ function Get-CovidData {
 
         [Parameter(Mandatory=$true)]
         [string]$FilePath,
+
+        [Parameter(Mandatory=$true)]
+        [string]$Name,
+
+        [Parameter(Mandatory=$true)]
+        [string]$FileName,
 
         [Parameter(Mandatory=$true)]
         [string]$ExportPath,
@@ -84,8 +92,7 @@ function Get-CovidData {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link" href="uk.html">UK</a>
-                            <a class="nav-link" href="india.html">INDIA</a>
+                        <a class="nav-link" href="$($FileName)">$($Name)</a>
                         </div>
                     </div>
                 </nav>
