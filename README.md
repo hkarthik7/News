@@ -12,7 +12,7 @@ Adding to this, **News app** is `mobile friendly`.
 
     NEWS
     |
-    |-- Countries # Holds all available country news files
+    |-- Countries # Holds all available country's news files
     |
     |-- Logs # folder to track the logs information
     |
