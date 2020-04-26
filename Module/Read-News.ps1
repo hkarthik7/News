@@ -60,6 +60,7 @@ function Read-News {
     harish.karthic     2.1	        19/04/2020		Added logging functionality
     harish.karthic     2.2	        20/04/2020		Created as a new module
     harish.karthic     2.3	        25/04/2020		Bug fix and alternate image url
+    harish.karthic     2.4	        26/04/2020		Minor tweak
 
 #>
 
@@ -122,7 +123,7 @@ function Read-News {
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link" href="$($ReferenceLink)">$($ReferenceName)</a>
-                    <a class="nav-link" href="covid-19.html">COVID-19</a>
+                    <a class="nav-link" href="../covid-19.html">COVID-19</a>
                 </div>
             </div>
         </nav>
