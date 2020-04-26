@@ -59,6 +59,7 @@ function Read-News {
     harish.karthic     2.0	        18/04/2020		Added Covid-19 data, link and function
     harish.karthic     2.1	        19/04/2020		Added logging functionality
     harish.karthic     2.2	        20/04/2020		Created as a new module
+    harish.karthic     2.3	        25/04/2020		Bug fix and alternate image url
 
 #>
 
@@ -173,7 +174,17 @@ function Read-News {
 "@
                 }
                 else {
-                    $counter ++
+                    $urlToImage = "https://cms-assets.tutsplus.com/uploads/users/2273/posts/34547/image/Dard-Ornaments.jpg"
+                    $html += @"
+                    <div class="col mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="$($urlToImage)" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <a href="$($response.articles[$i].url)" class="card-link">$($response.articles[$i].title)</a>
+                            </div>
+                        </div>
+                    </div>
+"@
                 }
             }
 
