@@ -6,20 +6,12 @@
     "parameters": {
         "apiKey": "Key.clixml",
         "countries": {
-            "uk": {
-                "name": "UK",
-                "url": "http://newsapi.org/v2/top-headlines?country=gb",
-                "fileName": "index.html",
-                "referenceName": "INDIA",
-                "referenceLink": "india.html"
-            },
-            "india": {
-                "name": "INDIA",
-                "url": "http://newsapi.org/v2/top-headlines?country=in",
-                "fileName": "india.html",
-                "referenceName": "UK",
-                "referenceLink": "index.html"
-            }
+            "codes": ["us", "au", "gb", "ca", "it", "in", "za", "ie"],
+            "names": ["United States", "Australia", "United Kingdom", "Canada", "Italia", "India", "South Africa", "Ireland"],
+            "url": "http://newsapi.org/v2/top-headlines?country=@countryName",
+            "fileName": "@countryName.html",
+            "referenceName": "Home",
+            "referenceLink": "index.html"
         },
         "covid19": {
             "url": "https://thevirustracker.com/free-api?global=stats",
@@ -28,7 +20,7 @@
         },
         "reportPaths": {
             "logPath": "Logs",
-            "exportPath": ".\\"
+            "exportPath": ".\\Countries"
         }
     }
 }
