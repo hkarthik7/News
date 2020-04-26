@@ -1,6 +1,6 @@
 {
     "name": "News App settings",
-    "version": "1.0",
+    "version": "1.2",
     "author": "Harish Karthic",
     "description": "Settings file for News App which helps to pass all mandatory settings to run the app",
     "parameters": {
