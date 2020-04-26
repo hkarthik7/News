@@ -61,6 +61,7 @@ function Read-News {
     harish.karthic     2.2	        20/04/2020		Created as a new module
     harish.karthic     2.3	        25/04/2020		Bug fix and alternate image url
     harish.karthic     2.4	        26/04/2020		Minor tweak
+    harish.karthic     2.5	        26/04/2020		Change in title
 
 #>
 
@@ -115,7 +116,7 @@ function Read-News {
         <nav class="navbar navbar-expand-lg text-white navbar-dark bg-dark">
             <a class="navbar-brand">
                 <img src="https://images.squarespace-cdn.com/content/v1/59d5623537c5817ce09196bf/1508964400127-ULPDNY4QJ0LER0CCNPTL/ke17ZwdGBToddI8pDm48kAg3YtiXGb9Y30HSwlFqSWBZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7dso8WS9HrXe-DDzLfr_qHkbriZg0Iu-s4mCjNkVmIrbmHWNG1OBCSefqzw2QRxcVQ/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="News">
-                NEWS
+                THE DAILY NEWS
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
