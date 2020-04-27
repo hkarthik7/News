@@ -4,6 +4,8 @@
 
 Adding to this, **News app** is `mobile friendly`.
 
+Here is the link to the app: [News] (https://hkarthik7.github.io/News)
+
 ## WHAT MAKES NEWS APP DIFFERENT
 
 **News app** holds a simple & clean layout and shows what is necessary in small chunks which makes it unique.
