@@ -4,7 +4,7 @@
 
 Adding to this, **News app** is `mobile friendly`.
 
-Here is the link to the app: [News] (https://hkarthik7.github.io/News)
+Here is the link to the app: [News](https://hkarthik7.github.io/News)
 
 ## WHAT MAKES NEWS APP DIFFERENT
 
