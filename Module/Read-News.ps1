@@ -62,7 +62,7 @@ function Read-News {
     harish.karthic     2.3	        25/04/2020		Bug fix and alternate image url
     harish.karthic     2.4	        26/04/2020		Minor tweak
     harish.karthic     2.5	        26/04/2020		Change in title
-
+    harish.karthic     2.6	        27/04/2020		Added code to open news in new tab
 #>
 
     [CmdletBinding()]
@@ -169,7 +169,7 @@ function Read-News {
                         <div class="card" style="width: 18rem;">
                             <img src="$($response.articles[$i].urlToImage)" class="card-img-top" alt="image">
                             <div class="card-body">
-                                <a href="$($response.articles[$i].url)" class="card-link">$($response.articles[$i].title)</a>
+                                <a href="$($response.articles[$i].url)" class="card-link" target="_blank">$($response.articles[$i].title)</a>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ function Read-News {
                         <div class="card" style="width: 18rem;">
                             <img src="$($urlToImage)" class="card-img-top" alt="image">
                             <div class="card-body">
-                                <a href="$($response.articles[$i].url)" class="card-link">$($response.articles[$i].title)</a>
+                                <a href="$($response.articles[$i].url)" class="card-link" target="_blank">$($response.articles[$i].title)</a>
                             </div>
                         </div>
                     </div>

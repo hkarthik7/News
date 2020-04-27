@@ -30,7 +30,7 @@ function Get-CovidData {
     harish.karthic     1.1	        21/04/2020		Added into module
     harish.karthic     1.2	        22/04/2020		Minor bug fix
     harish.karthic     1.3	        26/04/2020		Parameterised reference name and link values
-
+    harish.karthic     1.4	        27/04/2020		Added code to open news in new tab
 
 #>
 
@@ -186,7 +186,7 @@ function Get-CovidData {
                     <p>Do not meet others, even friends or family.</p>
                     <p>You can spread the virus even if you don't have symptoms.</p>
                 <hr class="my-4">
-                <a class="btn btn-primary btn-sm" href="$($responsesCovid.source.url)" role="button">Learn more</a>
+                <a class="btn btn-primary btn-sm" href="$($responsesCovid.source.url)" role="button" target="_blank">Learn more</a>
             </div>
                 <h1 class="display-5">COVID-19 UK DATA</h1>
                 <hr>
