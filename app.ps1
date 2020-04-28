@@ -18,6 +18,7 @@ harish.karthic     1.3	        24/04/2020		Removed hard coded values and moved
                                                 mandatory settings to settings.json
                                                 file.
 harish.karthic     1.4	        26/04/2020		Added homepage function and parameters
+harish.karthic     1.5	        28/04/2020		Added function to delete old log files
 
 #>
 
@@ -32,6 +33,10 @@ Import-Module .\Module
 # run functions
 
 $settings = Get-Content -Path ".\settings.json" -Raw | ConvertFrom-Json
+
+# Limiting Logs
+
+Limit-Logs -FilePath $settings.parameters.reportPaths.logPath -RetentionPeriod 20 -Verbose
 
 $countryCodes = $settings.parameters.countries.codes
 
