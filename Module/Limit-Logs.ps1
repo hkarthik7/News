@@ -55,7 +55,7 @@ function Limit-Logs {
 
                 $days = ((Get-Date) - $file.LastWriteTime).Days
 
-                if ($days -le $RetentionPeriod) {
+                if ($days -eq $RetentionPeriod) {
 
                     Write-Verbose "[$(Get-Date -Format s)] : $($functionName) : Deleting $($file.FullName) as it is older than $RetentionPeriod days.."
 
