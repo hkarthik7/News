@@ -263,6 +263,7 @@ function Get-CovidData {
     
 }
 Export-ModuleMember -Function Get-CovidData
+
 # SIG # Begin signature block
 # MIIFwgYJKoZIhvcNAQcCoIIFszCCBa8CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
