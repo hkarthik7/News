@@ -11,28 +11,28 @@ https://restcountries.eu/
 
 .NOTES
 Author             Version		 Date			Notes
-----------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 harish.karthic     1.0	        22/04/2020		Initial script
 harish.karthic     1.1	        24/04/2020		Minor tweak
-harish.karthic     1.3	        24/04/2020		Removed hard coded values and moved
-                                                mandatory settings to settings.json
-                                                file.
+harish.karthic     1.3	        24/04/2020		Removed hard coded values and moved mandatory settings to settings.json file.
 harish.karthic     1.4	        26/04/2020		Added homepage function and parameters
 harish.karthic     1.5	        28/04/2020		Added function to delete old log files
 
 #>
 
-#region module refresh
-
-Import-Module .\Module
-
 # set TLS version to 1.2
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-# run functions
+# importing necessary values
 
 $settings = Get-Content -Path ".\settings.json" -Raw | ConvertFrom-Json
+
+# region module refresh
+
+Import-Module $settings.parameters.reportPaths.modulePath
+
+# run functions
 
 # Limiting Logs
 
