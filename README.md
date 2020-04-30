@@ -22,6 +22,8 @@ Here is the link to the app: [News](https://hkarthik7.github.io/News)
     |
     |-- Reports # contains covid-19 reports
     |
+    |-- Tests # unit test files
+    |
     |-- Api-Key.clixml # Api key (if applicable)
     |
     |-- app.ps1 # script which runs the app
@@ -45,4 +47,3 @@ Added COVID-19 details and related url.
 ## TODO
 
 - Layout change
-- Covid-19 data for available countries
