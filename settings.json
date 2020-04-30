@@ -1,6 +1,6 @@
 {
     "name": "News App settings",
-    "version": "1.3",
+    "version": "1.4",
     "author": "Harish Karthic",
     "description": "Settings file for News App which helps to pass all mandatory settings to run the app",
     "parameters": {
@@ -19,7 +19,7 @@
             "filePath": "Reports"
         },
         "reportPaths": {
-            "modulePath": "Module",
+            "modulePath": ".\\Module",
             "logPath": "Logs",
             "exportPath": ".\\Countries"
         }
