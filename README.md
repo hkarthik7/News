@@ -43,7 +43,3 @@ Here is the link to the app: [News](https://hkarthik7.github.io/News)
 ## NOTES
 
 Added COVID-19 details and related url.
-
-## TODO
-
-- Layout change
